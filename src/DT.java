@@ -20,7 +20,7 @@ class node
 		right=r;
 	}
 	
-	//·j´M¤H¦W
+	//æœå°‹äººå
 	public static int Search(String SearchName, int count)
 	{
 		for(int i=0; i<=count; i++) 
@@ -37,7 +37,7 @@ class node
 	}
 	
 	
-	//·s«ØÀÉ®×§â¸ê®Æ¼g¶i¥h
+	//æ–°å»ºæª”æ¡ˆæŠŠè³‡æ–™å¯«é€²å»
 	public static void WriteData(int count) throws IOException
 	{
 		File file = new File("Data.txt");
@@ -53,7 +53,7 @@ class node
         fw.close();
 	}
 	
-	//Åª¨úÀÉ®×
+	//è®€å–æª”æ¡ˆ
 	public static int Readfile() throws IOException
 	{
 		for(int i=0; i<80; i++) 
@@ -79,13 +79,13 @@ class node
 		return count;
 	}
 	
-	//­×§ïÀÉ®×
+	//ä¿®æ”¹æª”æ¡ˆ
 	public static void EditData(int p, String inputN, String inputA, String inputM)
 	{
 		dataArray[p][0]=inputN;
 		dataArray[p][1]=inputA;
 		dataArray[p][2]=inputM;
-		dataArray[p][3]="¬d¸ßµ²ªG:";
+		dataArray[p][3]="æŸ¥è©¢çµæœ:";
 		dataArray[p][4]="";
 	}
 }	
@@ -93,21 +93,21 @@ class node
 
 public class DT 
 {
-	//«Ø¥ß¨Mµ¦¾ğ
+	//å»ºç«‹æ±ºç­–æ¨¹
 	static node root=null;
 	public static void buildDT()
 	{
 		node temp=root;
-		temp=root=new node(null, "¦~ÄÖ¬O§_>=7·³", null);
-		temp.left=new node(null, "µL¦æ¬°¯à¤O¤H", null);
-		temp=temp.right=new node(null, "¦~ÄÖ¬O§_>=20·³", null);
-		temp.left=new node(null, "§¹¥ş¦æ¬°¯à¤O¤H", null);
-		temp=temp.right=new node(null, "¬O§_¤wµ²±B", null);
-		temp.left=new node(null, "§¹¥ş¦æ¬°¯à¤O¤H", null);
-		temp.right=new node(null, "­­¨î¦æ¬°¯à¤O¤H", null);
+		temp=root=new node(null, "å¹´é½¡æ˜¯å¦>=7æ­²", null);
+		temp.left=new node(null, "ç„¡è¡Œç‚ºèƒ½åŠ›äºº", null);
+		temp=temp.right=new node(null, "å¹´é½¡æ˜¯å¦>=20æ­²", null);
+		temp.left=new node(null, "å®Œå…¨è¡Œç‚ºèƒ½åŠ›äºº", null);
+		temp=temp.right=new node(null, "æ˜¯å¦å·²çµå©š", null);
+		temp.left=new node(null, "å®Œå…¨è¡Œç‚ºèƒ½åŠ›äºº", null);
+		temp.right=new node(null, "é™åˆ¶è¡Œç‚ºèƒ½åŠ›äºº", null);
 	}
 	
-	//¬d¸ßµ²ªG
+	//æŸ¥è©¢çµæœ
 	public static String judge(node temp)
 	{
 		if(node.age<7)
@@ -142,18 +142,18 @@ public class DT
 		String name;
 		buildDT();
 		int datanum=node.Readfile();
-		System.out.println("¥Áªk¦æ¬°¯à¤O¬d¸ß");
+		System.out.println("æ°‘æ³•è¡Œç‚ºèƒ½åŠ›æŸ¥è©¢");
 		Scanner sc1 = new Scanner(System.in);
 		int n;
 		
 		while(true) 
 		{	
-			System.out.print("½Ğ°İ±z·Q­n1.¨Ì©m¦W¬d¸ß¦æ¬°¯à¤O 2.­×§ï¸ê®Æ 3.·s¼W¸ê®Æ 4.Â÷¶}: ");
+			System.out.print("è«‹å•æ‚¨æƒ³è¦1.ä¾å§“åæŸ¥è©¢è¡Œç‚ºèƒ½åŠ› 2.ä¿®æ”¹è³‡æ–™ 3.æ–°å¢è³‡æ–™ 4.é›¢é–‹: ");
 			n=sc1.nextInt();
 			switch(n) 
 			{
 			case 1:
-				System.out.print("¬d¸ß©m¦W:");
+				System.out.print("æŸ¥è©¢å§“å:");
 				name=sc1.next();
 				int find=node.Search(name, datanum);
 				if(name.equals("ALL")) 
@@ -162,21 +162,21 @@ public class DT
 						node.age=Integer.parseInt(node.dataArray[i][1]);
 						
 						node.marry=node.dataArray[i][2];
-						System.out.println(node.dataArray[i][0]+"¬O"+judge(root)+"\n");
-						node.dataArray[i][3]="¬d¸ßµ²ªG:"+judge(root);
+						System.out.println(node.dataArray[i][0]+"æ˜¯"+judge(root)+"\n");
+						node.dataArray[i][3]="æŸ¥è©¢çµæœ:"+judge(root);
 					}
 				}
 				else if(find!=-1) 
 				{
-					System.out.println(name+"¬O"+judge(root)+"\n");
-					node.dataArray[find][3]="¬d¸ßµ²ªG:"+judge(root);
+					System.out.println(name+"æ˜¯"+judge(root)+"\n");
+					node.dataArray[find][3]="æŸ¥è©¢çµæœ:"+judge(root);
 				}
 				else
 					System.out.println("NOT FOUND!"+"\n");
 				break;
 				
 			case 2:
-				System.out.print("±z·Q­n­×§ï½Öªº¸ê®Æ:");
+				System.out.print("æ‚¨æƒ³è¦ä¿®æ”¹èª°çš„è³‡æ–™:");
 				name=sc1.next();
 				if(node.Search(name, datanum)==-1) 
 				{
@@ -184,34 +184,34 @@ public class DT
 				}
 				else 
 				{
-					System.out.print("­×§ï1.¦~ÄÖ 2.¬O§_µ²±B:");
+					System.out.print("ä¿®æ”¹1.å¹´é½¡ 2.æ˜¯å¦çµå©š:");
 					int in = sc1.nextInt();
 					if(in==1) 
 					{
-						System.out.print("·sªº¦~ÄÖ¬°: ");
+						System.out.print("æ–°çš„å¹´é½¡ç‚º: ");
 						String newage=sc1.next();
 						node.EditData(node.Search(name, datanum), name, newage, node.marry);
 					}
 					else 
 					{
-						System.out.print("·sªº±B«Ãª¬ªp¬°: ");
+						System.out.print("æ–°çš„å©šå§»ç‹€æ³ç‚º: ");
 						String newmarry=sc1.next();
 						node.EditData(node.Search(name, datanum), name, node.strage, newmarry);	
 					}
 				}
-				System.out.println("­×§ï¸ê®Æ¦¨¥\!\n");
+				System.out.println("ä¿®æ”¹è³‡æ–™æˆåŠŸ!\n");
 				break;
 				
 			case 3:
-				System.out.print("·s¼W©m¦W: ");
+				System.out.print("æ–°å¢å§“å: ");
 				String addName=sc1.next();
-				System.out.print("·s¼W¦~ÄÖ: ");
+				System.out.print("æ–°å¢å¹´é½¡: ");
 				String addAge=sc1.next();
-				System.out.print("·s¼W±B«Ãª¬ªp: ");
+				System.out.print("æ–°å¢å©šå§»ç‹€æ³: ");
 				String addMarry=sc1.next();
 				datanum++;
 				node.EditData(datanum, addName, addAge, addMarry);
-				System.out.println("·s¼W¸ê®Æ¦¨¥\!\n");
+				System.out.println("æ–°å¢è³‡æ–™æˆåŠŸ!\n");
 				break;
 				
 			case 4:
@@ -219,7 +219,7 @@ public class DT
 				return;
 				
 			default:
-				System.out.println("½Ğ¿é¤J1~4:");
+				System.out.println("è«‹è¼¸å…¥1~4:");
 					
 			}
 			node.WriteData(datanum);
